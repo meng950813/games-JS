@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2048 - cm</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="discription" content="网页版2048,响应式">
+	<meta name="keywords" content="2048,网页版,响应式">
+	<meta name="author" content="cm">
+	<link rel="stylesheet" href="css/2048.css">
+	<link rel="shortcut icon" href="http://115.159.92.11/favicon.ico">
+</head>
+<body>
+	<div class="restart">
+	<a class="againBtn" onclick="game.start()"> 重新开始</a></div>
+	<p>Score: <span id="score"></span></p>
+	<p>topScore: <span id="topScore"></span></p>
+	<div id="gridPanel">
+		<!-- 对应 -->
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+		<div class="grid"></div>
+
+		<!-- 对应每格 -->
+		<div id="c00" class="cell"></div>
+		<div id="c01" class="cell"></div>
+		<div id="c02" class="cell"></div>
+		<div id="c03" class="cell"></div>
+		
+		<div id="c10" class="cell"></div>
+		<div id="c11" class="cell"></div>
+		<div id="c12" class="cell"></div>
+		<div id="c13" class="cell"></div>
+
+		<div id="c20" class="cell"></div>
+		<div id="c21" class="cell"></div>
+		<div id="c22" class="cell"></div>
+		<div id="c23" class="cell"></div>
+
+		<div id="c30" class="cell"></div>
+		<div id="c31" class="cell"></div>
+		<div id="c32" class="cell"></div>
+		<div id="c33" class="cell"></div>
+	</div>
+	
+	<!-- 游戏结束 -->
+	<div id="gameOver">
+		<!-- 半透明全屏背景 -->
+		<div class="overBg"></div>
+
+		<!-- 弹出窗 -->
+		<div id="overTip">
+			Game Over <br>
+			Score:	<span id="fScore">0</span><br>
+			<a class="againBtn" onclick="game.start()"> Try Again</a>
+		</div>
+	</div>
+	<script src="js/animation.js"></script>
+	<script src="js/2048.js"></script>
+</body>
+</html>

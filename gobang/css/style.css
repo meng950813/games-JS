@@ -1,0 +1,91 @@
+html,body{
+	font-size: 12px;
+	height: 100%;
+}
+
+body,html,div,canvas,button{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#chess{
+	box-shadow: -2px -2px 2px #efefef,5px 5px 5px #b9b9b9; 
+	background: #e5b895;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	cursor: pointer;
+	z-index: 1;
+	-webkit-transition:opacity 0.5s;
+	-moz-transition:opacity 0.5s;
+	transition:opacity 0.5s;
+}
+
+#restart{
+	line-height: 1.5rem;
+	font-size: 1.5rem;
+	color: #e4393c;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	margin-left: -3rem;
+	cursor: pointer;
+	opacity: 0;
+	z-index: -1;
+}
+
+#restart.active{
+	webkit-transition: top 0.3s, opacity 0.3s;
+  -moz-transition: top 0.3s, opacity 0.3s;
+  transition: top 0.3s, opacity 0.3s;
+  top: 80%;
+  opacity: 1;
+  z-index: 999;
+}
+
+#restart:before{
+	color: #449d44;
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+#restart:hover::before,#restart:focus::before{
+	-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  opacity: 1;
+}
+
+// 输，赢，平局 的 canvas 样式
+#success,#fail,#draw{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+img{
+	max-width: 100px;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	margin: -50px;
+	display: none;
+}
+
+@media screen and (min-width : 450px){
+	html{
+		font-size: 14px;
+	}
+	#chess{
+		margin:-225px -225px; 
+	}
+}
